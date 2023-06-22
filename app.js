@@ -18,7 +18,7 @@ const genres = [
     {id: 6, title: "Coming To America", genre: "Epic"},
     {id: 7, title: "Blessing In My Hood", genre: "Horror"}
 ]
-
+// Root route
 app.get('/', (req, res) => {
     res.send('Welcome to Vidly Movie Rentals App')
 })
