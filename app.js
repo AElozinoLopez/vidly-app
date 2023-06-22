@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 // All genres route
 app.get('/api/genres', (req, res) => {
-    res.status(200).send('Movies available on Vidly:');
+    res.send(genres)
 })
 
 
