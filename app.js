@@ -22,3 +22,5 @@ const genres = [
 app.get('/', (req, res) => {
     res.send('Welcome to Vidly Movie Rentals')
 })
+
+app.listen(port, console.log(`Vidly app is listening on port ${port}`));
