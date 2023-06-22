@@ -23,4 +23,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to Vidly Movie Rentals App')
 })
 
+// All genres route
+app.get('/api/genres', (req, res) => {
+    res.status(200).send('Movies available on Vidly:');
+})
+
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
