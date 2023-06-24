@@ -30,9 +30,10 @@ app.get('/api/genres', (req, res) => {
 
 // To get a single genre
 app.get('/api/genres/:id', (req, res) => {
-    const genre = genres.find(g => g.id === parseInt(req.params.id) );
+    const genre = genres.find(c => c.id === parseInt(req.params.id) );
 
-    if (!genre) return; res.status(404).send('The genre with the given ID does not exist');
+    if (!genre)  res.status(404).send('The genre with the given ID does not exist');
+    // return;
     res.send(genre);
 })
 
