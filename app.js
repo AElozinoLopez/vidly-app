@@ -37,4 +37,8 @@ app.get('/api/genres/:id', (req, res) => {
     res.send(genre);
 })
 
+app.post('/api/genres', (req, res) => {
+    
+})
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
