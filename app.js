@@ -38,7 +38,10 @@ app.get('/api/genres/:id', (req, res) => {
 })
 
 app.post('/api/genres', (req, res) => {
-    
+    if(req.body.name || req.body.name.lenght < 7) {
+        res.status(400).send('Genre is required');
+        return;
+    }
 })
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
