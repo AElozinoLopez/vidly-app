@@ -39,7 +39,7 @@ app.get('/api/genres/:id', (req, res) => {
 
 app.post('/api/genres', (req, res) => {
     // validation logic
-    if(req.body.name || req.body.name.length < 7) {
+    if(req.body.title || req.body.title.length < 7) {
         res.status(400).send('Genre is required');
         return;
     }
@@ -47,7 +47,7 @@ app.post('/api/genres', (req, res) => {
     // Post logic
     const genre = {
         id: genres.length + 1,
-        name: req.body.name
+        title: req.body.title
     };
     genres.push(genre);
     res.send(genre);
