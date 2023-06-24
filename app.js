@@ -39,9 +39,9 @@ app.get('/api/genres/:id', (req, res) => {
 
 app.post('/api/genres', (req, res) => {
     // validation logic
-    if(req.body.title || req.body.title.length < 7) {
+    if(req.body.title || req.body.title.length < 3) {
         res.status(400).send('Genre is required');
-        return;
+        // return;
     }
 
     // Post logic
