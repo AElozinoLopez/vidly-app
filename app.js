@@ -49,6 +49,8 @@ app.post('/api/genres', (req, res) => {
         id: genres.length + 1,
         name: req.body.name
     };
+    genres.push(genre);
+    res.send(genre);
 })
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
