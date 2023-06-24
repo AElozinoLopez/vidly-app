@@ -31,6 +31,9 @@ app.get('/api/genres', (req, res) => {
 // To get a single genre
 app.get('/api/genres/:id', (req, res) => {
     const genre = genres.find(g => g.id === parseInt(req.params.id) );
+
+    if (!genre) return; res.status(404).send('The genre with the given ID does not exist');
+    res.send(genre);
 })
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
