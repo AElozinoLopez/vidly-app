@@ -30,7 +30,7 @@ app.get('/api/genres', (req, res) => {
 
 // To get a single genre
 app.get('/api/genres/:id', (req, res) => {
-    
+    const genre = genres.find(g => g.id === parseInt(req.params.id) );
 })
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
