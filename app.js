@@ -66,6 +66,9 @@ app.put('/api/genres/:id', (req, res) => {
         res.status(400).send('Genre is required')
     }
 
+    // Updating teh course
+    genre.title = req.body.title;
+    res.send(genre);
     
 })
 
