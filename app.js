@@ -89,4 +89,6 @@ const schema = {
     name: Joi.string().min(8).required()
 }
 
+const result = Joi.validate(req.body.schema);
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
