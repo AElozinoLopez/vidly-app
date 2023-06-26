@@ -63,8 +63,8 @@ app.put('/api/genres/:id', (req, res) => {
 
     // Updating the record
     const genre = genres.find(g => g.id === parseInt(req.params.id));
-    if (!genre) res.status(400).send('Input a valid course');
-    genre.push(genre)
+    if (!genre) res.status(400).send('The genre with the given ID was not found');
+    res.send(genre)
 })
 
 
