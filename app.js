@@ -96,4 +96,14 @@ if (result.error) {
     return;
 }
 
+
+// Still on validating using joi -  this time, placing the validation logic in a function
+function validateGenre(genre) {
+    const schema = {
+        name: Joi.string().min(8).required()
+    };
+    return Joi.validate(genre, schema);
+}
+
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
