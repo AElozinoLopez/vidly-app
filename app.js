@@ -56,15 +56,17 @@ app.post('/api/genres', (req, res) => {
 // Updating the genres
 
 app.put('/api/genres/:id', (req, res) => {
+    // Looking up the course
+    const genre = genres.find(g => g.id === parseInt(req.params.id));
+    if (!genre) res.status(400).send('The genre with the given ID was not found');
+    res.send(genre)
+
     // Validate
     if (!req.body.title || req.body.title.length) {
         res.status(400).send("The genre with the given ID does not exist")
     }
 
-    // Updating the record
-    const genre = genres.find(g => g.id === parseInt(req.params.id));
-    if (!genre) res.status(400).send('The genre with the given ID was not found');
-    res.send(genre)
+    
 })
 
 
