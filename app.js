@@ -53,4 +53,10 @@ app.post('/api/genres', (req, res) => {
     res.send(genre);
 })
 
+// Updating the genres
+// Validate
+if (!req.body.title || req.body.title.length) {
+    res.status(400).send("The genre with the given ID does not exist")
+}
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
