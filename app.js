@@ -76,7 +76,7 @@ app.delete('/api/genres/:id', (req, res) => {
     // Look up the genre
     const genre = genres.find(g => g.id === parseInt(req.params.id));
     if (!genre) res.status(400).send('The course with the given ID was not found');
-    // res.send(genre);
+    res.send(genre);
     // Deleting a genre
     const index = genres.indexOf(genre);
     genres.splice(index, 1);
