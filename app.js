@@ -72,5 +72,8 @@ app.put('/api/genres/:id', (req, res) => {
     
 })
 
+app.delete('/api/genres/:id', (req, res) => {
+    
+})
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
