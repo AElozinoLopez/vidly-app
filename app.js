@@ -60,6 +60,11 @@ app.put('/api/genres/:id', (req, res) => {
     if (!req.body.title || req.body.title.length) {
         res.status(400).send("The genre with the given ID does not exist")
     }
+
+    // Updating the record
+    const genre = genres.find(g => g.id === parseInt(req.body.params));
+    if (!genre) res.status(400).send('Input a valid course');
+    genre.push(genre)
 })
 
 
