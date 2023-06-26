@@ -77,7 +77,11 @@ app.delete('/api/genres/:id', (req, res) => {
     const genre = genres.find(g => g.id === req.params.id);
     if (!genre) res.status(400).send('The course with the given ID was not found');
     res.send(genre);
-    // 
+    // Deleting a genre
+    const index = genres.indexOf(genre);
+    genres.splice(index, 1);
+    
+    res.send(genre);
 })
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
