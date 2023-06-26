@@ -84,4 +84,9 @@ app.delete('/api/genres/:id', (req, res) => {
     res.send(genre);
 })
 
+// Validation Using Joi
+const schema = {
+    name: Joi.string().min(8).required()
+}
+
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
