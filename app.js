@@ -63,7 +63,7 @@ app.put('/api/genres/:id', (req, res) => {
 
     // Validate the input
     if (!req.body.title || req.body.title.length < 8) {
-        res.status(400).send("The genre with the given ID does not exist")
+        res.status(400).send('Genre is required')
     }
 
     
