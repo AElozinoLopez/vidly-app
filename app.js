@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 const genres = [
     {id: 1, title: "The Comeback", genre: "Epic"},
@@ -85,32 +85,32 @@ app.delete('/api/genres/:id', (req, res) => {
     res.send(genre);
 })
 
-// Validation Using Joi
-const schema = {
-    name: Joi.string().min(8).required()
-}
+// // Validation Using Joi
+// const schema = {
+//     name: Joi.string().min(8).required()
+// }
 
-const result = Joi.validate(req.body.schema);
+// const result = Joi.validate(req.body.schema);
 
-if (result.error) {
-    res.status(400).send(result.error.details[0].message);
-    return;
-}
+// if (result.error) {
+//     res.status(400).send(result.error.details[0].message);
+//     return;
+// }
 
 
-// Still on validating using joi -  this time, placing the validation logic in a function
-function validateGenre(genre) {
-    const schema = {
-        name: Joi.string().min(8).required()
-    };
-    return Joi.validate(genre, schema);
-}
-// Re-writing the validation logic
-const {error} = validateGenre(req.body);
-if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-}
+// // Still on validating using joi -  this time, placing the validation logic in a function
+// function validateGenre(genre) {
+//     const schema = {
+//         name: Joi.string().min(8).required()
+//     };
+//     return Joi.validate(genre, schema);
+// }
+// // Re-writing the validation logic
+// const {error} = validateGenre(req.body);
+// if (error) {
+//     res.status(400).send(error.details[0].message);
+//     return;
+// }
 
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
