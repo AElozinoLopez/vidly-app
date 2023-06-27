@@ -104,6 +104,12 @@ function validateGenre(genre) {
     };
     return Joi.validate(genre, schema);
 }
+// Re-writing the validation logic
+const {error} = validateGenre(req.body);
+if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+}
 
 
 app.listen(port, console.log(`Vidly app is listening on port ${port}`));
