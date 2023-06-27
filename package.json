@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AElozinoLopez/vidly-app#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "joi": "^17.9.2",
     "nodemon": "^2.0.22"
