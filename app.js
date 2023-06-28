@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('env');  // Not sure what this line exactly does for now
 
 const port = process.env.PORT || 5000;
-process.env.NODE_ENV = app.get('env')
+process.env.NODE_ENV = app.get('env') // To be explored further
 
 const genres = [
     {id: 1, title: "The Comeback", genre: "Epic"},
